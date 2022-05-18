@@ -1,5 +1,5 @@
-# SCDP
+### SCDP
 
-# TODO
+### TODO
 
-# Repository for SCDP: Style Change Detection Based On Prompt
+### Repository for SCDP: Style Change Detection Based On Prompt
