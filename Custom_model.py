@@ -14,10 +14,7 @@ class PromptBERT(nn.Module):
 
     def forward(self, input_ids, attention_mask, token_type_ids):
         output = self.encoder(input_ids, attention_mask, token_type_ids)
-        # seq_relationship_score = self.cls(pooled_output)
         mask_index = (input_ids == 103)
-        # input_mask_expanded = mask_index.long().unsqueeze(-1).expand(output[0].size()).float()
-        # mask_embedding = torch.sum(output[0] * input_mask_expanded, 1)
         mask_embedding = output[0][mask_index]
         mask_predict = self.predict(mask_embedding)
         return mask_predict
