@@ -10,7 +10,7 @@ class PromptBERT(nn.Module):
         super().__init__()
         conf = AutoConfig.from_pretrained(pretrained_model_path)
         self.encoder = BertModel.from_pretrained(pretrained_model_path, config=conf)
-        self.predict = nn.Linear(conf.hidden_size, 40524).cuda()
+        self.predict = nn.Linear(conf.hidden_size, 30524).cuda()
 
     def forward(self, input_ids, attention_mask, token_type_ids):
         output = self.encoder(input_ids, attention_mask, token_type_ids)
